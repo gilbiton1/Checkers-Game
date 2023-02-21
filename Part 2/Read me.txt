@@ -1,0 +1,34 @@
+Second part
+
+Following on from the checkers game, in this exercise it is required to play the mammalian checkers game. The implementation must be modular and in accordance with the principles of object-oriented programming. The game contains an 8x8 board of squares containing different types of mammals.
+Each game tool - a mammal, has its own rules of movement and eating, when there may be animals with overlapping rules.
+Arrangement of dishes on the board
+Each player will start with 3 dogs, 3 cats, 3 elephants, 3 mice.
+The participants will be numbered by the numbers 1 and 2, when the user is player 1 and the computer is 2.
+By combining the first letter of the animal's name in English and the player's number. For example, for a cat belonging to the computer the representation would be "C2". For a dog belonging to the user the representation will be "D1".
+The rules are the basic checkers rules, here are the characteristics of all the players:
+
+Types of tools - animals
+• Dog (Dog) – the dog moves according to normal rules (only diagonally), but is able to eat only one time per turn. If at the end of eating it is possible to eat again, he will not be allowed to eat it.
+• Cat (Cat) – a cat can move one square in any direction chosen and for any type of square (both for "-" and "*" squares - not necessarily diagonally). However, eating is done according to the usual rules - only diagonally. This means that if a cat is on a * square, it will not be possible to eat a dish that is not on a * square.
+• Elephant – the elephant moves diagonally 2 squares at once (only diagonally). When he eats, the eating will be done according to the normal rules (the elephant must be diagonally adjacent to another mammal in order to eat and he jumps over it to the next cell and picks up the dish he ate).
+• Mouse (Mouse) - the mouse moves diagonally 2 squares like the elephant, but does not raise dishes when it "eats" them. When he reaches a position where he can "eat", he will have to perform the movement (he will jump over the opponent's vessel), but the opponent's vessel will remain in place. In the same way if he has a double take, he will be obliged to make the move but the opponent's tool will remain in place.
+
+kingdom
+When a regular piece (mammal) reaches the opposite last row, it becomes a "queen". Representation of a queen will be done by adding the letter Q to the representation of the tool. For example, if it is an elephant of the computer that has become a queen, the representation will be E2Q.
+Only elephants and mice (E, M) can become queens. Other pieces that reach the last row will continue as normal pieces - the dog will get stuck in the last row and the cat will continue as usual (it can move in all directions without being a queen).
+In addition, if a piece passes the last row while performing a double 'eating', and ends the move in one of the rows before the last row, it does not become a queen, and in fact continues as a normal piece according to its rules.
+Queen elephant - can move diagonally 2 squares in all directions. Committed to eating as much as possible.
+Queen mouse - can move in all directions diagonally. When she reaches a position where she can eat, she is obliged to perform the movement (jump over the opponent's vessel), but the opponent's vessel will remain in place.
+ 
+
+the progress of the game
+The player performs the action of moving a tool or eating by entering the coordinates of the tool and the coordinates of the target, after displaying the output line:
+It's your turn, please enter your move:
+
+For example: if the user wants to mark a tool (3,2), and move it to cell (4,1), he must type the input 41-32. The game must check that the move performed by the player is indeed legal (if performing movement - check that there is no tool that interferes, and if performing 'eating', check that there is indeed an opponent's tool that can be jumped over, etc...) If the move is illegal, the player will be shown the following message :
+This move is invalid. Please enter a new move.
+
+After the user plays, the computer will play its turn. The computer will choose one random tool from among the tools in its possession, and move it to a possible random position (from among the legal positions to which the same tool can move). If a computer tool is committed to eating, it will do it instead of making a random move.
+
+You must continue to receive moves from the players (the user and the computer) alternately until one of two cases occur: first case - one of the players has won and the opposing player has no more tools left, second case - a case of a draw in which the player whose turn it is now to play has no legal moves to make (all his tools are blocked) , third case - a situation in which the player puts a STOP into the program, which signifies that the player surrenders. If one of the players won, the user will be shown a message that he won.
